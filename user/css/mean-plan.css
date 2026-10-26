@@ -1,0 +1,398 @@
+/* ================= PLANS CONTAINER ================= */
+
+.plans-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    align-items: stretch;
+}
+
+.plan-item {
+    width: 100%;
+}
+
+
+/* ================= PLAN CARD ================= */
+
+.plan-card {
+    position: relative;
+
+    width: 100%;
+    min-height: 500px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e2e2;
+
+    border-radius: 12px;
+
+    padding: 35px;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.plan-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+
+/* ================= PRICE ================= */
+
+.plan-price {
+    text-align: center;
+
+    font-size: 46px;
+
+    font-weight: 500;
+
+    color: #111;
+
+    margin-top: 20px;
+
+    margin-bottom: 5px;
+}
+
+.plan-card h3 {
+    text-align: center;
+
+    font-size: 18px;
+
+    font-weight: 500;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================= BUTTONS ================= */
+
+.plan-buttons {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+.get-started,
+.chat-sales {
+    width: 100%;
+
+    padding: 13px;
+
+    border-radius: 7px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    display: block;
+}
+
+
+/* GET STARTED */
+
+.get-started {
+    color: #e7b900;
+
+    background: #fff;
+
+    border: 2px solid #e7c329;
+}
+
+.get-started:hover {
+    background: #f8c800;
+
+    color: #fff;
+}
+
+
+/* CHAT */
+
+.chat-sales {
+    background: #fff4ce;
+
+    color: #222;
+}
+
+.chat-sales:hover {
+    background: #f8d33d;
+}
+
+
+/* ================= HR ================= */
+
+.plan-card hr {
+    border: 0;
+
+    border-top: 1px solid #ddd;
+
+    margin: 25px 0;
+}
+
+
+/* ================= FEATURES ================= */
+
+.plan-feature {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.plan-feature > span {
+    color: #e8bd00;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+.plan-feature div {
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+}
+
+.plan-feature strong {
+    font-size: 16px;
+}
+
+.plan-feature b {
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+.plan-feature small {
+    width: 100%;
+
+    color: #777;
+
+    font-size: 10px;
+
+    margin-top: 3px;
+}
+
+
+/* ================= PREMIUM ================= */
+
+.premium-card {
+    background: linear-gradient(
+        145deg,
+        #ffd52a,
+        #ffc400
+    );
+
+    border: none;
+
+    color: #111;
+}
+
+.premium-card .get-started {
+    background: #fff;
+
+    border-color: #fff;
+
+    color: #e2b600;
+}
+
+.premium-card .chat-sales {
+    background: transparent;
+
+    border: 1px solid #fff;
+}
+
+
+/* ================= BEST VALUE ================= */
+
+.best-value {
+    display: table;
+
+    margin: 0 auto 15px;
+
+    background: #fff;
+
+    padding: 7px 16px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* ================= SAVE BADGE ================= */
+
+.save-badge {
+    position: absolute;
+
+    top: 18px;
+    left: -1px;
+
+    background: #f8c900;
+
+    color: #111;
+
+    padding: 8px 25px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    transform: rotate(-45deg) translate(-35px, -5px);
+
+    width: 130px;
+
+    text-align: center;
+}
+
+
+/* ================= WHY CHOOSE ================= */
+
+.why-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 40px 0 25px;
+}
+
+.why-heading span {
+    width: 35px;
+
+    height: 2px;
+
+    background: #f2c400;
+}
+
+.why-heading h2 {
+    font-size: 23px;
+
+    margin: 0;
+
+    font-weight: 700;
+}
+
+
+/* ================= WHY BOX ================= */
+
+.why-section {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.why-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 10px 20px;
+}
+
+.why-icon {
+    min-width: 85px;
+
+    height: 85px;
+
+    border-radius: 15px;
+
+    background: #fff7d8;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 38px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .plans-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .why-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .plans-container {
+        grid-template-columns: 1fr;
+    }
+
+    .why-section {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ================= HEADING ================= */
+
+.plan-heading {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 40px auto;
+    display: block;
+}
+
+.plan-heading h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 8px 0;
+    text-align: center;
+}
+
+.plan-heading p {
+    font-size: 18px;
+    color: #666;
+    margin: 0 0 12px 0;
+    text-align: center;
+}
+
+.heading-icon {
+    text-align: center;
+    font-size: 25px;
+    color: #f5c400;
+}
