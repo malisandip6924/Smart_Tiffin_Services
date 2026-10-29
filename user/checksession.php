@@ -8,7 +8,7 @@ $uid=$_SESSION['uid'];
 $plandetail_id=$_SESSION['plandetail_id'];
 $rate=$_SESSION['rate'];
 $startdate=date('d/m/Y');
-$q=mysqli_query($con,"insert into add_to_cart values('',$plandetail_id,$rate,'$startdate',0)");
+$q=mysqli_query($con,"insert into add_to_cart values('',$uid,$plandetail_id,$rate,'$startdate',0)");
 if($q)
     {
     echo "<script>alert('Your plan is added into the cart')

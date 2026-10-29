@@ -94,12 +94,14 @@ if (isset($_GET['remove'])) {
 
     $remove_id = (int) $_GET['remove'];
 
+    $current_uid = (int) $_SESSION['uid'];
+
     $stmt = mysqli_prepare(
         $con,
-        "DELETE FROM add_to_cart WHERE cartid = ?"
+        "DELETE FROM add_to_cart WHERE cartid = ? AND uid = ?"
     );
 
-    mysqli_stmt_bind_param($stmt, "i", $remove_id);
+    mysqli_stmt_bind_param($stmt, "ii", $remove_id, $current_uid);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 
@@ -111,15 +113,23 @@ if (isset($_GET['remove'])) {
    CART QUERY
 ========================================== */
 
-$q = mysqli_query(
+$current_uid = (int) $_SESSION['uid'];
+
+$stmt = mysqli_prepare(
     $con,
     "SELECT p.*, a.*, pm.*
      FROM plan_detail p
      INNER JOIN add_to_cart a
         ON a.plandetail_id = p.plandetail_id
      INNER JOIN plan_master pm
-        ON pm.plan_id = p.plan_id"
+        ON pm.plan_id = p.plan_id
+     WHERE a.uid = ?"
 );
+
+mysqli_stmt_bind_param($stmt, "i", $current_uid);
+mysqli_stmt_execute($stmt);
+$q = mysqli_stmt_get_result($stmt);
+mysqli_stmt_close($stmt);
 
 if (!$q) {
     die("Cart query error: " . mysqli_error($con));
@@ -147,6 +157,9 @@ while ($row = mysqli_fetch_assoc($q)) {
 if ($cart_count > 0) {
     $_SESSION['order_plan_name'] = $selected_plan;
     $_SESSION['order_price'] = $cart_total;
+} else {
+    unset($_SESSION['order_plan_name']);
+    unset($_SESSION['order_price']);
 }
 ?>
 
